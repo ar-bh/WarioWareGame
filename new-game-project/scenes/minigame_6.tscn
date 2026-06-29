@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://clicklevel6"]
+
+[ext_resource type="Script" path="res://scenes/click_minigame.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://c5wj43l21dipc" path="res://walper.jpg" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://ll24b5dj17lt" path="res://scenes/image-removebg-preview.png" id="3_stud"]
+[ext_resource type="Script" uid="uid://c8ygbctcvklw3" path="res://button.gd" id="3_btn"]
+[ext_resource type="PackedScene" uid="uid://ilowdnyvl11i" path="res://scenes/timer.tscn" id="6_timer"]
+
+[node name="Minigame_6" type="Node2D"]
+script = ExtResource("1_script")
+time_limit = 9.0
+buttons_required = 5
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.30006558, 0.30006558)
+texture = ExtResource("2_bg")
+
+[node name="Button_1" type="TextureButton" parent="."]
+offset_left = 100.0
+offset_top = 100.0
+offset_right = 500.0
+offset_bottom = 451.0
+scale = Vector2(0.6, 0.6)
+texture_normal = ExtResource("3_stud")
+script = ExtResource("3_btn")
+
+[node name="Button_2" type="TextureButton" parent="."]
+offset_left = 500.0
+offset_top = 60.0
+offset_right = 900.0
+offset_bottom = 411.0
+scale = Vector2(0.38, 0.38)
+texture_normal = ExtResource("3_stud")
+script = ExtResource("3_btn")
+
+[node name="Button_3" type="TextureButton" parent="."]
+offset_left = 850.0
+offset_top = 130.0
+offset_right = 1250.0
+offset_bottom = 481.0
+scale = Vector2(0.46, 0.46)
+texture_normal = ExtResource("3_stud")
+script = ExtResource("3_btn")
+
+[node name="Button_4" type="TextureButton" parent="."]
+offset_left = 200.0
+offset_top = 430.0
+offset_right = 600.0
+offset_bottom = 781.0
+scale = Vector2(0.34, 0.34)
+texture_normal = ExtResource("3_stud")
+script = ExtResource("3_btn")
+
+[node name="Button_5" type="TextureButton" parent="."]
+offset_left = 620.0
+offset_top = 400.0
+offset_right = 1020.0
+offset_bottom = 751.0
+scale = Vector2(0.52, 0.52)
+texture_normal = ExtResource("3_stud")
+script = ExtResource("3_btn")
+
+[node name="timer" parent="." instance=ExtResource("6_timer")]

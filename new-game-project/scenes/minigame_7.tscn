@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://platformlevel7"]
+
+[ext_resource type="Script" path="res://scenes/platform_minigame.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://c5wj43l21dipc" path="res://walper.jpg" id="2_bg"]
+[ext_resource type="Texture2D" uid="uid://ll24b5dj17lt" path="res://scenes/image-removebg-preview.png" id="3_stud"]
+[ext_resource type="Script" uid="uid://bfxg3hpqwg16p" path="res://scenes/studs.gd" id="4_stud_script"]
+[ext_resource type="PackedScene" uid="uid://be8qbmt0fe144" path="res://scenes/player.tscn" id="5_player"]
+[ext_resource type="PackedScene" uid="uid://ilowdnyvl11i" path="res://scenes/timer.tscn" id="6_timer"]
+
+[sub_resource type="RectangleShape2D" id="Rect_Ground"]
+size = Vector2(1800.0, 160.0)
+
+[sub_resource type="RectangleShape2D" id="Rect_Step1"]
+size = Vector2(200.0, 26.0)
+
+[sub_resource type="RectangleShape2D" id="Rect_Step2"]
+size = Vector2(160.0, 22.0)
+
+[sub_resource type="RectangleShape2D" id="Rect_Step3"]
+size = Vector2(130.0, 20.0)
+
+[sub_resource type="CircleShape2D" id="CircleShape_stud"]
+radius = 42.0
+
+[node name="Minigame_7" type="Node2D"]
+script = ExtResource("1_script")
+time_limit = 15.0
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 3840.0
+offset_bottom = 2160.0
+scale = Vector2(0.30006558, 0.30006558)
+texture = ExtResource("2_bg")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(576.0, 655.0)
+shape = SubResource("Rect_Ground")
+[node name="ColorRect" type="ColorRect" parent="Ground"]
+offset_left = -324.0
+offset_top = 575.0
+offset_right = 1476.0
+offset_bottom = 735.0
+color = Color(0, 0, 0, 1)
+
+[node name="Step1" type="StaticBody2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step1"]
+position = Vector2(350.0, 492.0)
+shape = SubResource("Rect_Step1")
+[node name="ColorRect" type="ColorRect" parent="Step1"]
+offset_left = 250.0
+offset_top = 479.0
+offset_right = 450.0
+offset_bottom = 505.0
+color = Color(0, 0, 0, 1)
+
+[node name="Step2" type="StaticBody2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step2"]
+position = Vector2(560.0, 400.0)
+shape = SubResource("Rect_Step2")
+[node name="ColorRect" type="ColorRect" parent="Step2"]
+offset_left = 480.0
+offset_top = 389.0
+offset_right = 640.0
+offset_bottom = 411.0
+color = Color(0, 0, 0, 1)
+
+[node name="Step3" type="StaticBody2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Step3"]
+position = Vector2(780.0, 310.0)
+shape = SubResource("Rect_Step3")
+[node name="ColorRect" type="ColorRect" parent="Step3"]
+offset_left = 715.0
+offset_top = 300.0
+offset_right = 845.0
+offset_bottom = 320.0
+color = Color(0, 0, 0, 1)
+
+[node name="Stud" type="Node2D" parent="."]
+position = Vector2(350.0, 433.0)
+script = ExtResource("4_stud_script")
+[node name="Stud" type="TextureRect" parent="Stud"]
+offset_left = -40.0
+offset_top = -75.0
+offset_right = 40.0
+offset_bottom = 0.0
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_stud")
+[node name="Area2D" type="Area2D" parent="Stud"]
+collision_mask = 1
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stud/Area2D"]
+position = Vector2(0, -38)
+shape = SubResource("CircleShape_stud")
+
+[node name="Stud2" type="Node2D" parent="."]
+position = Vector2(560.0, 343.0)
+script = ExtResource("4_stud_script")
+[node name="Stud" type="TextureRect" parent="Stud2"]
+offset_left = -40.0
+offset_top = -75.0
+offset_right = 40.0
+offset_bottom = 0.0
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_stud")
+[node name="Area2D" type="Area2D" parent="Stud2"]
+collision_mask = 1
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stud2/Area2D"]
+position = Vector2(0, -38)
+shape = SubResource("CircleShape_stud")
+
+[node name="Stud3" type="Node2D" parent="."]
+position = Vector2(780.0, 254.0)
+script = ExtResource("4_stud_script")
+[node name="Stud" type="TextureRect" parent="Stud3"]
+offset_left = -40.0
+offset_top = -75.0
+offset_right = 40.0
+offset_bottom = 0.0
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("3_stud")
+[node name="Area2D" type="Area2D" parent="Stud3"]
+collision_mask = 1
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Stud3/Area2D"]
+position = Vector2(0, -38)
+shape = SubResource("CircleShape_stud")
+
+[node name="Player" parent="." instance=ExtResource("5_player")]
+position = Vector2(147.0, 512.9919)
+
+[node name="timer" parent="." instance=ExtResource("6_timer")]

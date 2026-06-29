@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://c7w4ab7h4lmt2"]
+
+[ext_resource type="Texture2D" uid="uid://cua56mg4brs8k" path="res://batman2.jpg" id="1_j4q6p"]
+[ext_resource type="Script" uid="uid://c4iurrmogp1a5" path="res://scenes/timer_screen.gd" id="1_xna03"]
+[ext_resource type="Texture2D" uid="uid://i283brnxnu4y" path="res://heart.webp" id="2_xna03"]
+
+[node name="TimerScreen" type="Node2D" unique_id=1465519205]
+script = ExtResource("1_xna03")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1402805050]
+offset_right = 1144.8889
+offset_bottom = 644.0
+texture = ExtResource("1_j4q6p")
+
+[node name="HeartContainer" type="HBoxContainer" parent="." unique_id=1452207160]
+offset_left = 260.0
+offset_top = 205.0
+offset_right = 2836.0
+offset_bottom = 717.0
+scale = Vector2(0.26081645, 0.26081645)
+
+[node name="Heart" type="TextureRect" parent="HeartContainer" unique_id=1232739376]
+layout_mode = 2
+texture = ExtResource("2_xna03")
+
+[node name="Heart2" type="TextureRect" parent="HeartContainer" unique_id=1684840531]
+layout_mode = 2
+texture = ExtResource("2_xna03")
+
+[node name="Heart3" type="TextureRect" parent="HeartContainer" unique_id=1436185988]
+layout_mode = 2
+texture = ExtResource("2_xna03")
+
+[node name="Heart4" type="TextureRect" parent="HeartContainer" unique_id=1304071292]
+layout_mode = 2
+texture = ExtResource("2_xna03")
+
+[node name="Heart5" type="TextureRect" parent="HeartContainer" unique_id=1787466399]
+layout_mode = 2
+texture = ExtResource("2_xna03")
+
+[node name="Level" type="RichTextLabel" parent="." unique_id=556039124]
+offset_left = 21.0
+offset_top = 17.0
+offset_right = 483.0
+offset_bottom = 188.0
+theme_override_font_sizes/normal_font_size = 82
+text = "Level #"
+
+[node name="Timer" type="RichTextLabel" parent="." unique_id=578969807]
+offset_left = 934.0
+offset_top = 15.0
+offset_right = 1156.0
+offset_bottom = 171.0
+theme_override_font_sizes/normal_font_size = 84
+text = "0.0"
