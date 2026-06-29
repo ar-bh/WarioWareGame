@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://cbakyup0n4d8l"]
+
+[ext_resource type="Texture2D" uid="uid://gpcjxfdrfnvg" path="res://batman.jpg" id="1_6jsh8"]
+[ext_resource type="Script" uid="uid://dop6n1srwrdgh" path="res://scenes/title_scene.gd" id="1_faptf"]
+
+[node name="TitleScreen" type="Node2D" unique_id=106921108]
+script = ExtResource("1_faptf")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1442923838]
+offset_right = 1134.6146
+offset_bottom = 639.0
+texture = ExtResource("1_6jsh8")
+
+[node name="Title" type="RichTextLabel" parent="." unique_id=1717642345]
+clip_contents = false
+offset_left = 60.0
+offset_top = 81.0
+offset_right = 760.0
+offset_bottom = 250.0
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/normal_font_size = 98
+text = "BatmanWare"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=668379771]
+offset_left = 177.0
+offset_top = 232.0
+offset_right = 475.0
+offset_bottom = 515.0
+
+[node name="Start" type="Button" parent="VBoxContainer" unique_id=372106733]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 32
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1714747771]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=992805302]
+layout_mode = 2
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 32
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
